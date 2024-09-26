@@ -1,7 +1,10 @@
 const { DataTypes } = require("sequelize");
+// Importando as configuracoes da pasta config
 const sequelize = require("../config/config");
+// importando tabela de evento para cirar Chave estrangeira
 const Evento = require("./Evento");
 
+// Definindo tabela Particpante no Banco de dados
 const Participante = sequelize.define("Participante", {
   name: {
     type: DataTypes.STRING,
