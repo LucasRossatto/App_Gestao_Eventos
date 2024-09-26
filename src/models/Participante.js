@@ -10,6 +10,7 @@ const Participante = sequelize.define("Participante", {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   eventoId: {
     type: DataTypes.INTEGER,

@@ -1,6 +1,5 @@
 const Evento = require("../models/Evento");
 const Participante = require("../models/Participante");
-const { Op, where } = require("sequelize");
 
 const EventoController = {
   create: async (req, res) => {
@@ -51,7 +50,7 @@ const EventoController = {
       const eventosListados = await Evento.findAll();
       return res.status(200).json({
         msg: "Eventos encontrados",
-        evento: eventosListados,
+        lista_eventos: eventosListados,
       });
     } catch (error) {
       console.error(error);
