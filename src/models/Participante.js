@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/config");
-const Evento = require('./Evento');
+const Evento = require("./Evento");
 
 const Participante = sequelize.define("Participante", {
   name: {
@@ -13,15 +13,14 @@ const Participante = sequelize.define("Participante", {
   },
   eventoId: {
     type: DataTypes.INTEGER,
+    allowNull: false,
     references: {
-        model: Evento,
-        key: 'id',
+      model: Evento,
+      key: "id",
     },
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE",
   },
-  
 });
-
-Participante.belongsToMany(Evento, { through: 'ParticipanteEvento' });
-
 
 module.exports = Participante;

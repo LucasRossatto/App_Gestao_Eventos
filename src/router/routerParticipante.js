@@ -23,8 +23,8 @@ router.put("/participante/:id", (req, res) => {
   ParticipanteController.update(req, res);
 });
 
-router.get("/evento/:id/participante", (req, res) =>{
-    ParticipanteController.getOnePartEvent(req,res);
-})
+router.get("/participante/por-evento/:eventoId", (req, res) =>{
+    ParticipanteController.getAllPartsOfEvent(req,res);
+});
 
 module.exports = router;

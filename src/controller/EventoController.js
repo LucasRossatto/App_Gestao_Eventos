@@ -1,4 +1,6 @@
 const Evento = require("../models/Evento");
+const Participante = require("../models/Participante");
+const { Op, where } = require("sequelize");
 
 const EventoController = {
   create: async (req, res) => {
@@ -49,7 +51,7 @@ const EventoController = {
       const eventosListados = await Evento.findAll();
       return res.status(200).json({
         msg: "Eventos encontrados",
-        user: eventosListados,
+        evento: eventosListados,
       });
     } catch (error) {
       console.error(error);
@@ -68,7 +70,7 @@ const EventoController = {
       }
       return res.status(200).json({
         msg: "Evento encontrado com sucesso!",
-        user: eventoEncontrado,
+        evento: eventoEncontrado,
       });
     } catch (error) {
       console.error(error);
@@ -92,6 +94,26 @@ const EventoController = {
     } catch (error) {
       console.error(error);
       return res.status(500).json({ msg: "Acione o Suporte" });
+    }
+  },
+
+  getPartsOfEvent: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const participantesEncontrados = await Participante.findAll({
+        where: { eventoId: id },
+      });
+      if (participantesEncontrados == null) {
+        return res.status(404).json({
+          msg: "Evento não encontrado",
+        });
+      }
+      return res.status(200).json({
+        msg: "Evento encontrado",
+        lista_participantes: participantesEncontrados,
+      });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
     }
   },
 };

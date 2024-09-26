@@ -1,5 +1,7 @@
 const Evento = require("../models/Evento");
 const Participante = require("../models/Participante");
+const { Op, where } = require("sequelize");
+
 
 const ParticipanteController = {
   create: async (req, res) => {
@@ -21,14 +23,14 @@ const ParticipanteController = {
     try {
       const { id } = req.params;
       const { name, email, eventoId } = req.body;
-      const partUpdate = await Participante.findByPk(id);
-      if (partUpdate == null) {
+      const participanteUpdate = await Participante.findByPk(id);
+      if (participanteUpdate == null) {
         return res.status(404).json({
           msg: "Participante não encontrado",
         });
       }
 
-      const updated = eventoUpdate.update({
+      const updated = participanteUpdate.update({
         name,
         email,
         eventoId,
@@ -97,35 +99,25 @@ const ParticipanteController = {
     }
   },
 
-  getOnePartEvent : async (req, res) => {
-    try {
-      const { id } = req.params;
-      const eventoEncontrado = await Evento.findByPk(id);
-
-      if (eventoEncontrado == null) {
+  getAllPartsOfEvent: async (req, res) => {
+     try {
+      const { eventoId } = req.params;
+      const participantesEncontrados = await Participante.findAll({
+        where: { eventoId : eventoId },
+      });
+      if (participantesEncontrados == null) {
         return res.status(404).json({
           msg: "Evento não encontrado",
         });
       }
-
-      if (eventoEncontrado){
-
-      }
-
-
-
-
-
-
-
-
-
-
+      return res.status(200).json({
+        msg: "Evento encontrados",
+        lista_participantes: participantesEncontrados,
+      });
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({ msg: "Acione o Suporte" });
+      res.status(500).json({ error: error.message });
     }
-  }
+  },
 };
 
 module.exports = ParticipanteController;

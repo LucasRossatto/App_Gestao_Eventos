@@ -23,4 +23,9 @@ router.put("/evento/:id", (req, res) => {
   EventoController.update(req, res);
 });
 
+router.get("/evento/:id/participante", (req, res) => {
+  EventoController.getPartsOfEvent(req,res);
+})
+
+
 module.exports = router;
