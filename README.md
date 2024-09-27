@@ -21,7 +21,7 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 
 ## Configurando banco de dados
 
-<p>O projeto utiliza o Banco de dados MySQL</p>
+<p>O projeto utiliza o Banco de dados MySQL, e prescisa do app MySQL workbench</p>
 
 ## Instalação 
 - Para baixar o projeto siga as instruções abaixo:
