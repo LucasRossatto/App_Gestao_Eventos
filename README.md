@@ -21,7 +21,7 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 
 ## Configurando banco de dados
 
-<p>O projeto Utiliza o Banco de dados MySQL</p>
+<p>O projeto utiliza o Banco de dados MySQL</p>
 
 ## Instalação 
 - Para baixar o projeto siga as instruções abaixo:
@@ -46,3 +46,13 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 ```
 1. CREATE DATABASE gestaoeentos
 ```
+
+## Capturas de Tela
+
+Schema do Banco de Dados
+
+[![](https://i.postimg.cc/zvZvYvmm/Captura-de-tela-2024-09-26-153521.png)](https://postimg.cc/ftCDxwT5)
+
+
+## Licença
+Este projeto pode ser usado por qualquer pessoa! Licença MIT
