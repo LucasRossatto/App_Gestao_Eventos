@@ -19,9 +19,7 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 
 - O Npm é distribuído com o Node.js, o que significa que quando você baixa o Node.js, você automaticamente obtém o npm instalado no seu computador. Baixar Node.js
 
-## Configurando banco de dados
 
-<p>O projeto utiliza o Banco de dados MySQL, e prescisa do app MySQL workbench</p>
 
 ## Instalação 
 - Para baixar o projeto siga as instruções abaixo:
@@ -40,6 +38,9 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 4. npm i sequelize
 5. npm install mysql2
 ```
+## Configurando banco de dados
+
+<p>O projeto utiliza o Banco de dados MySQL, e prescisa do MySQL workbench</p>
 
 - Inialize o Data Base no MySQL Workbench
 
