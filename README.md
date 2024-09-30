@@ -48,7 +48,7 @@ O projeto deve ser construído com npm, então escolha uma das abordagens abaixo
 1. CREATE DATABASE gestaoeentos
 ```
 
-- Após isso basta iniciar a API com o comando
+## Após isso basta iniciar a API com o comando
 ```
 1. npm start
 ```
